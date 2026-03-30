@@ -23,7 +23,7 @@ Conteudo esperado:
 - Instalar/validar firmware custom (MrChromebox)
 
 Referencia:
-- [Como desbloquear os chromebooks.](./docs/01-Desbloquear_Chromebooks.md)
+- [Como desbloquear os chromebooks.](./docs/01-Desbloquear_Chromebook.md)
 
 Status: em construcao
 
