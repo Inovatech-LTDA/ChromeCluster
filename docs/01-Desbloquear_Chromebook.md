@@ -4,10 +4,10 @@
 Guia de como desbloquear e liberar o firmware do chromebook para a instalção de outros sistemas operacionais.
 
 ## Passo a passo:
-  - [Trava de Hardware](#//-liberar-a-trava-de-hardware)
-  - [Modo Desenvolvedor](#//-entrando-em-modo-desenvolvedor)
-  - [Powerwash]()
-  - etc...
+  - [Liberar a trava de Hardware](#-liberar-a-trava-de-hardware)
+  - [Powerwash](#-powerwash)
+  - [Entrando em Modo Desenvolvedor](#-entrando-em-modo-desenvolvedor)
+  - [Custom Firmware](#-custom-firmware)
 
 ### // Liberar a trava de Hardware
 
@@ -20,7 +20,8 @@ Guia de como desbloquear e liberar o firmware do chromebook para a instalção d
 3. **Remova a capa metálica e solte a placa:**  
    - Remova a capa metálica dos conectores (**amarelo**);  
    - Remova os parafusos da placa-mãe (**vermelho**);  
-   - Desconecte os cabos (**verde**).  
+   - Desconecte os cabos (**verde**).
+   - ⚠ **Atenção, o cabo do monitor, não deve ser removido pois é muito frágil** ⚠
    **[Imagem da placa de cima / em destaque: chapa metálica, parafusos e cabos]**
 
 4. **Remova o parafuso da trava de hardware** (na parte de trás da placa-mãe).
@@ -30,16 +31,14 @@ Guia de como desbloquear e liberar o firmware do chromebook para a instalção d
 
 5. **Remonte tudo** e siga para o próximo passo.
 
-### // Entrando em [Modo Desenvolvedor](https://docs.mrchromebox.tech/docs/boot-modes/developer.html)
+### // Powerwash
 
-### // Resetar o MDM (Mobile Device Management)
-
-Para resetar o MDM (Mobile Device Management), precisamos fazer login com a conta google abaixo e seguir os passos seguintes:  
+Agora é necessário logar como uma conta google para resetar o MDM (Mobile Device Management), dessa forma passamos o controle do chromebook para a conta registrada **(Apenas para )**. Faça login com a conta google abaixo e siga com os passos seguintes:  
 	
 
 | E-mail | Senha |
 | :---: | :---: |
-| i9chromecluster@gmail.com | Consultar com o professor |
+| i9chromecluster@gmail.com | Consulte alguém que saiba |
 
 1. Conecte ao wi-fi.  
 2. Inicie o dispositivo normalmente e faça a configuração padrão logando com a conta acima e senha.  
@@ -49,3 +48,10 @@ Para resetar o MDM (Mobile Device Management), precisamos fazer login com a cont
 Inicie o Chromebook em [Modo de Rocuperação](https://docs.mrchromebox.tech/docs/boot-modes/recovery.html).  
 Pressione Ctrl \+ Refresh \+ Power como na foto exemplo  
 ![Imagem extraída da wiki do MrChromebox](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/recovery-keyboard-hint.png)
+
+### // Entrando em [Modo Desenvolvedor](https://docs.mrchromebox.tech/docs/boot-modes/developer.html)
+
+### // Custom Firmware
+
+
+
