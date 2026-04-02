@@ -1,58 +1,91 @@
-# // Inovatech | ChromeCluster. (Em Desenvolvimento)
+---
+title: Modulo 01 - Desbloquear Chromebook
+tags:
+  - inovatech
+  - chromecluster
+  - chromebook
+  - firmware
+  - mrchromebox
+status: em-andamento
+---
 
-## Guia da pré instalação dos chromebooks.
-Guia de como desbloquear e liberar o firmware do chromebook para a instalção de outros sistemas operacionais.
+# Modulo 01 - Desbloquear Chromebook
 
-## Passo a passo:
-  1. [Liberar a trava de Hardware](#-1-liberar-a-trava-de-hardware)
-  2. [Powerwash](#-2-powerwash)
-  3. [Entrando em Modo Desenvolvedor](#-3-entrando-em-modo-desenvolvedor)
-  4. [Custom Firmware](#-4-custom-firmware)
+Guia de pre-instalacao para desbloquear o Chromebook e liberar o firmware para boot de outros sistemas operacionais.
 
-### // 1. Liberar a trava de Hardware
+## Objetivo
 
-1.1 **Remova os parafusos da traseira do notebook.**  
-   **[Imagem Parafusos Traseiros]**
+Remover bloqueios fisicos e de firmware para preparar o equipamento para a instalacao do Ubuntu Server.
 
-1.2 **Desencaixe a tampa traseira** puxando no vão da conexão com o monitor.  
-   **[Imagem Vão Traseiro]**
+## Sumario
 
-1.3 **Remova a capa metálica e solte a placa:**  
-   - Remova a capa metálica dos conectores (**amarelo**);  
-   - Remova os parafusos da placa-mãe (**vermelho**);  
-   - Desconecte os cabos (**verde**).
-   - ⚠ **Atenção, o cabo do monitor, não deve ser removido pois é muito frágil** ⚠
-   
-   **[Imagem da placa de cima / em destaque: chapa metálica, parafusos e cabos]**
+1. [Liberar a trava de hardware](#1-liberar-a-trava-de-hardware)
+2. [Powerwash](#2-powerwash)
+3. [Entrar em modo desenvolvedor](#3-entrar-em-modo-desenvolvedor)
+4. [Instalar firmware custom](#4-instalar-firmware-custom)
 
-1.4 **Remova o parafuso da trava de hardware** (na parte de trás da placa-mãe).
+## 1. Liberar a trava de hardware
 
-   ![Foto tirada no inovatech](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/notebook_aberto.jpeg)  
-   ![Foto Extraída da wiki do MrChromebox](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/verso_placa_mae.jpeg)
+1. **Remova os parafusos da tampa traseira do notebook.**
+   [Imagem parafusos traseiros]
 
-1.5 **Remonte tudo** e siga para o próximo passo.
+2. **Desencaixe a tampa traseira** puxando no vao da conexao com o monitor.
+   [Imagem vao traseiro]
 
-### // 2. Powerwash
+3. **Remova a capa metalica e solte a placa:**
+   - Remova a capa metalica dos conectores (amarelo).
+   - Remova os parafusos da placa-mae (vermelho).
+   - Desconecte os cabos (verde).
 
-Agora é necessário logar como uma conta google para resetar o MDM (Mobile Device Management), dessa forma passamos o controle do chromebook para a conta registrada **(Apenas para )**. Faça login com a conta google abaixo e siga com os passos seguintes:  
-	
+> Atenção: nao remova o cabo do monitor. Esse cabo e fragil e pode romper com facilidade.
+
+[Imagem da placa de cima com destaque para chapa metalica, parafusos e cabos]
+
+4. **Remova o parafuso da trava de hardware** (na parte traseira da placa-mae).
+
+![Foto tirada no Inovatech](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/notebook_aberto.jpeg)
+![Foto extraida da wiki do MrChromebox](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/verso_placa_mae.jpeg)
+
+5. **Remonte o equipamento** e avance para o proximo passo.
+
+## 2. Powerwash
+
+Nesta etapa, faca login com a conta institucional para resetar o MDM (Mobile Device Management) e transferir o controle do Chromebook.
 
 | E-mail | Senha |
 | :---: | :---: |
-| i9chromecluster@gmail.com | Consulte alguém que saiba |
+| i9chromecluster@gmail.com | Consulte alguem da equipe responsavel |
 
-1. Conecte ao wi-fi.  
-2. Inicie o dispositivo normalmente e faça a configuração padrão logando com a conta acima e senha.  
-3. Fazer o Powerwash (Configurações do sistema \> Avançado \> Redefinir Configurações \> Powerwash)  
-4. Quando o Powerwash acabar, siga os passos abaixo.
+Passos:
 
+1. Conecte o Chromebook ao Wi-Fi.
+2. Inicie o dispositivo e conclua a configuracao padrao com a conta acima.
+3. Execute o Powerwash: Configuracoes do sistema > Avancado > Redefinir configuracoes > Powerwash.
+4. Ao finalizar, siga para o modo desenvolvedor.
 
-### // 3. Entrando em [Modo Desenvolvedor](https://docs.mrchromebox.tech/docs/boot-modes/developer.html)
-1. Inicie o Chromebook em [Modo de Rocuperação](https://docs.mrchromebox.tech/docs/boot-modes/recovery.html).
-2. 2. Pressione Ctrl \+ Refresh \+ Power como na foto exemplo  
-![Imagem extraída da wiki do MrChromebox](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/recovery-keyboard-hint.png)
+## 3. Entrar em modo desenvolvedor
 
-### // 4. Custom Firmware
+Referencias oficiais:
+
+- [Modo desenvolvedor](https://docs.mrchromebox.tech/docs/boot-modes/developer.html)
+- [Modo de recuperacao](https://docs.mrchromebox.tech/docs/boot-modes/recovery.html)
+
+Passos:
+
+1. Inicie o Chromebook em modo de recuperacao.
+2. Pressione Ctrl + Refresh + Power conforme a imagem:
+
+![Imagem extraida da wiki do MrChromebox](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/recovery-keyboard-hint.png)
+
+## 4. Instalar firmware custom
+
+Em desenvolvimento.
+
+Proximo alvo desta secao:
+
+- Instalar/validar firmware custom do MrChromebox
+- Confirmar boot alternativo
+- Registrar checklist de sucesso/falha
 
 
 
