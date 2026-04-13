@@ -43,8 +43,8 @@ Remover bloqueios fisicos e de firmware para preparar o equipamento para a insta
 
 4. **Remova o parafuso da trava de hardware** (na parte traseira da placa-mae).
 
-![Foto tirada no Inovatech](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/notebook_aberto.jpeg)
-![Foto extraida da wiki do MrChromebox](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/verso_placa_mae.jpeg)
+![Foto tirada no Inovatech](../images/docs/01/notebook_aberto.jpeg)
+![Foto extraida da wiki do MrChromebox](../images/docs/01/verso_placa_mae.jpeg)
 
 5. **Remonte o equipamento** e avance para o proximo passo.
 
@@ -75,7 +75,7 @@ Passos:
 1. Inicie o Chromebook em modo de recuperacao.
 2. Pressione Ctrl + Refresh + Power conforme a imagem:
 
-![Imagem extraida da wiki do MrChromebox](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/recovery-keyboard-hint.png)
+![Imagem extraida da wiki do MrChromebox](../images/docs/01/recovery-keyboard-hint.png)
 
 ## 4. Instalar firmware custom
 
