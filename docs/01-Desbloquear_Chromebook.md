@@ -50,42 +50,59 @@ Remover bloqueios fisicos e de firmware para preparar o equipamento para a insta
 
 ## 2. Powerwash
 
-Nesta etapa, faca login com a conta institucional para resetar o MDM (Mobile Device Management) e transferir o controle do Chromebook.
+Ligue o chromebook, conecte ao wifi e aguarde alguns minutos, alguns chromebooks não tiveram suas licenças baixadas ainda, nesses casos na tela inicial tem uma mensagem falando que o dispositivo é gerenciado pela universidade. Basta aguardar e ele vai dar o powerwash que limpa essa licença da universidade reiniciando o dispositivo. Após isso siga os proximos passos.
+
+Fazemos login com essa conta para resetar o MDM (Mobile Device Management) e liberar o acesso ao [Modo desenvolvedor](https://docs.mrchromebox.tech/docs/boot-modes/developer.html).
 
 | E-mail | Senha |
 | :---: | :---: |
-| i9chromecluster@gmail.com | Consulte alguem da equipe responsavel |
+| i9chromecluster@gmail.com | Consultar com o André Codato ou algum professor |
 
-Passos:
+Passo a passo:
 
 1. Conecte o Chromebook ao Wi-Fi.
 2. Inicie o dispositivo e conclua a configuracao padrao com a conta acima.
-3. Execute o Powerwash: Configuracoes do sistema > Avancado > Redefinir configuracoes > Powerwash.
-4. Ao finalizar, siga para o modo desenvolvedor.
+3. Execute o Powerwash: Configurações do sistema > Avançado > Redefinir configurações > Powerwash.
+
+Assim o computador vai reiniciar e entrar na tela de login do sistema, aguarde sem fazer nada, não faça o login, em algum momento vai aparecer uma janela confirmando o powerwash, aceite e siga para o próximo passo.
 
 ## 3. Entrar em modo desenvolvedor
 
-Referencias oficiais:
+Neste passo entraremos no modo de recuperação do dispositivo para então ativar o Modo Desenvolvedor.
 
-- [Modo desenvolvedor](https://docs.mrchromebox.tech/docs/boot-modes/developer.html)
-- [Modo de recuperacao](https://docs.mrchromebox.tech/docs/boot-modes/recovery.html)
+Passo a passo:
 
-Passos:
-
-1. Inicie o Chromebook em modo de recuperacao.
-2. Pressione Ctrl + Refresh + Power conforme a imagem:
+1. Inicie o Chromebook em modo de recuperacao precionando Ctrl + Refresh + Power conforme a imagem:
 
 ![Imagem extraida da wiki do MrChromebox](../images/docs/01/recovery-keyboard-hint.png)
 
+2. Na tela inicial do modo recuperação precione Ctrl + D e confirme pressionando a tecla ENTER, o computador reiniciará e então começará o processo para habilitar o Modo Desenvolvedor.
+
+**Modo Recuperação**
+![Tela do modo recuperação](../images/docs/01/tela_modo_recuperacao.png)
+
+3. Ao finalizar o processo o computador reiniciará e exibirá a tela abaixo. Nesse momento é importante que você aguarde, por conta desse processo essa tela de aviso é exibida e você deve aguardar até que o chromebook apite e saia dessa tela, iniciando normalmente.
+
+4. Após a iniciação o processor de uma nova configuração do dispositivo sera exibido novamente, apenas se conecte ao wifi e siga para o [proximo passo desse guia](#4-instalar-firmware-custom).
+
+**Modo Desenvolvimento**
+![Aviso de segurança](../images/docs/01/aviso_seguranca.png)
+
+Referencias oficiais:
+
+- [Modo de recuperacao](https://docs.mrchromebox.tech/docs/boot-modes/recovery.html)
+- [Modo desenvolvedor](https://docs.mrchromebox.tech/docs/boot-modes/developer.html)
+
 ## 4. Instalar firmware custom
 
-Em desenvolvimento.
+Nesse módulo desbloquearemos o firmware do chromebook possibilitando a instalação de outros sistemas na máquina através de um Custom Firmware chamado [MrChromeBox](https://mrchromebox.tech/)
 
-Proximo alvo desta secao:
+1. Após ter conectado ao wifi, pressione Ctrl + Alt + F2 (No teclado do chromebook é a seta para a direita "->"), assim entraremos no terminal do chromebook onde poderemos escrever o script responsável pelo desbloqueio do firmware.
 
-- Instalar/validar firmware custom do MrChromebox
-- Confirmar boot alternativo
-- Registrar checklist de sucesso/falha
+2. Ao entrar no terminal, digite o seguinte comando para baixar e executar o script de desbloqueio.
+```bash
+curl -LOf https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh
+```
+3. No menu da ferramenta Firmware-Util, selecione a segunda opção digitando 2 e pressionando ENTER. Algumas perguntas serão feitas, a resposta para a primeira e a segunda é "Y" e a terceira pode por "N"
 
-
-
+4. Aguarde a finalização do script, ao retornar ao menú principal precione P para desligar o dispositivo e pronto, seu chromebook está desbloqueado.
