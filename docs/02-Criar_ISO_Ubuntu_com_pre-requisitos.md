@@ -24,12 +24,16 @@ A instalação padrão de ubuntu server não vem como conecção wifi por padrã
 3. []()
 
 ## 1. Instalar cubic
+![]()
+
+<img src="../images/docs/02/cubic-logo.png" width=100/>
+
 
 O cubic pode ser instalado facilmente no Ubuntu:
 
   - Ubuntu 18.04.5 Bionic Beaver e mais atuais.
 
-![Logo do ubuntu](../images/02/ubuntu-logo.png) **Ubuntu e derivados**
+![Logo do ubuntu](../images/docs/02/ubuntu-logo.png) **Ubuntu e derivados**
 
 ```bash
 sudo apt-add-repository universe
