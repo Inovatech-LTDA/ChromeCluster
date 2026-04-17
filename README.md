@@ -18,7 +18,7 @@ status: em-desenvolvimento
 <p align="center">
   <img src="https://img.shields.io/badge/Modulos-06-0A66C2?style=for-the-badge" alt="Modulos" />
   <img src="https://img.shields.io/badge/Guias-06-2E8B57?style=for-the-badge" alt="Guias" />
-  <img src="https://img.shields.io/badge/Script%20Worker-01-E67E22?style=for-the-badge" alt="Script Worker" />
+  <img src="https://img.shields.io/badge/Scripts-01-E67E22?style=for-the-badge" alt="Scripts" />
   <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-C0392B?style=for-the-badge" alt="Status" />
 </p>
 
