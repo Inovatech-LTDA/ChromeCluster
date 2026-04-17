@@ -24,80 +24,119 @@ status: em-desenvolvimento
 
 Projeto acadêmico do Inovatech/Unipar para reaproveitar Chromebooks Samsung como nós de um cluster [Docker Swarm](https://docs.docker.com/engine/swarm/) para uso em laboratório, ensino e experimentação prática.
 
-## Visão geral
+## Visao geral
 
-O ChromeCluster organiza o processo em módulos progressivos:
+O projeto esta organizado em modulos progressivos, desde o desbloqueio do hardware ate a operacao do cluster em producao academica.
 
-1. Desbloqueio de hardware e firmware.
-2. Criação de ISO Ubuntu Server com pré-requisitos.
-3. Instalação do sistema base nos Chromebooks.
-4. Bootstrap do manager Docker Swarm.
-5. Entrada e validação dos workers.
-6. Operação e manutenção do cluster.
+## Sumario de modulos
 
-## Mapa rápido do repositório
+1. [Modulo 01 - Desbloquear Chromebook](#modulo-01---desbloquear-chromebook)
+2. [Modulo 02 - Criar ISO Ubuntu com pre-requisitos](#modulo-02---criar-iso-ubuntu-com-pre-requisitos)
+3. [Modulo 03 - Instalar Ubuntu Server no Chromebook](#modulo-03---instalar-ubuntu-server-no-chromebook)
+4. [Modulo 04 - Configurar Docker Swarm pai (manager)](#modulo-04---configurar-docker-swarm-pai-manager)
+5. [Modulo 05 - Adicionar workers no cluster](#modulo-05---adicionar-workers-no-cluster)
+6. [Modulo 06 - Operacao, monitoramento e manutencao](#modulo-06---operacao-monitoramento-e-manutencao)
 
-- Contexto institucional: [INOVATECH.md](./INOVATECH.md)
-- Diagramas do fluxo: [DIAGRAMA.MD](./DIAGRAMA.MD)
-- Script de provisionamento de worker: [scripts/setup_worker.sh](./scripts/setup_worker.sh)
+## Status rapido
 
-Guias por módulo:
+| Modulo | Status |
+| --- | --- |
+| Modulo 01 | Em andamento |
+| Modulo 02 | Em andamento |
+| Modulo 03 | Em andamento |
+| Modulo 04 | Em andamento |
+| Modulo 05 | Em andamento |
+| Modulo 06 | Em andamento |
 
-- [docs/01-Desbloquear_Chromebook.md](./docs/01-Desbloquear_Chromebook.md)
-- [docs/02-Criar_ISO_Ubuntu_com_pre-requisitos.md](./docs/02-Criar_ISO_Ubuntu_com_pre-requisitos.md)
-- [docs/03-Instalar_Ubuntu_Server_no_Chromebook.md](./docs/03-Instalar_Ubuntu_Server_no_Chromebook.md)
-- [docs/04-Configurar_Docker_Swarm_Manager.md](./docs/04-Configurar_Docker_Swarm_Manager.md)
-- [docs/05-Adicionar_Workers_no_Cluster.md](./docs/05-Adicionar_Workers_no_Cluster.md)
-- [docs/06-Operacao_Monitoramento_e_Manutencao.md](./docs/06-Operacao_Monitoramento_e_Manutencao.md)
+## Modulo 01 - Desbloquear Chromebook
 
-## Status dos módulos
+Objetivo: remover bloqueios fisicos e de firmware para permitir boot customizado.
 
-| Módulo | Entrega | Situação |
-| --- | --- | --- |
-| 01 | Desbloquear Chromebook | Em andamento |
-| 02 | Criar ISO customizada | Em andamento |
-| 03 | Instalar Ubuntu Server | Em andamento |
-| 04 | Configurar manager Swarm | Em andamento |
-| 05 | Adicionar workers | Em andamento |
-| 06 | Operar e manter cluster | Em andamento |
+Conteudo atual:
 
-## Fluxo técnico resumido
+- Liberacao da trava de hardware
+- Etapa de Powerwash
+- Entrada em modo desenvolvedor
+- Instalacao de firmware custom
 
-1. Remover write-protect e ativar modo desenvolvedor.
-2. Instalar firmware custom do MrChromebox.
-3. Gerar ISO custom com suporte de rede para Chromebook.
-4. Instalar Ubuntu Server e validar SSH/rede.
-5. Inicializar o manager com `docker swarm init`.
-6. Adicionar workers e validar com `docker node ls`.
-7. Executar rotina de operação, atualização e contingência.
+Guia detalhado:
 
-Para o fluxo completo em diagrama, consulte [DIAGRAMA.MD](./DIAGRAMA.MD).
+- [Abrir guia do Modulo 01](./docs/01-Desbloquear_Chromebook.md)
 
-## Setup rápido de worker
+## Modulo 02 - Criar ISO Ubuntu com pre-requisitos
 
-Comando básico:
+Objetivo: preparar midia de instalacao do Ubuntu Server com os pacotes e configuracoes base do projeto.
 
-```bash
-sudo bash scripts/setup_worker.sh --token <TOKEN_SWARM> --manager <IP_MANAGER>
-```
+Conteudo atual:
 
-Com NFS opcional:
+- Instalacao e uso do Cubic
+- Inclusao dos pacotes de rede (Wi-Fi)
+- Validacao da ISO gerada
 
-```bash
-sudo bash scripts/setup_worker.sh --token <TOKEN_SWARM> --manager <IP_MANAGER> --nfs <IP_NFS>
-```
+Guia detalhado:
 
-O script automatiza atualização do sistema, instalação do Docker, ajustes para hardware limitado, firewall, fail2ban e join no swarm.
+- [Abrir guia do Modulo 02](./docs/02-Criar_ISO_Ubuntu_com_pre-requisitos.md)
 
-## Referências
+## Modulo 03 - Instalar Ubuntu Server no Chromebook
 
-- [MrChromebox Docs](https://docs.mrchromebox.tech)
-- [Docker Swarm Docs](https://docs.docker.com/engine/swarm/)
-- [Ubuntu Server Docs](https://ubuntu.com/server/docs)
+Objetivo: instalar o Ubuntu Server e validar o funcionamento inicial do hardware.
 
-## Próximos passos recomendados
+Conteudo atual:
 
-1. Validar os módulos 03 a 06 em bancada e registrar ajustes práticos.
-2. Completar capturas de tela do módulo 02 e padronizar imagens dos demais guias.
-3. Adicionar uma seção FAQ com erros recorrentes e soluções rápidas.
+- Boot pela midia USB
+- Instalacao base do sistema
+- Checklist de validacao e troubleshooting
+
+Guia detalhado:
+
+- [Abrir guia do Modulo 03](./docs/03-Instalar_Ubuntu_Server_no_Chromebook.md)
+
+## Modulo 04 - Configurar Docker Swarm pai (manager)
+
+Objetivo: criar o no principal do Swarm e definir padroes de rede e seguranca.
+
+Conteudo atual:
+
+- Instalacao do Docker Engine
+- Inicializacao do cluster com docker swarm init
+- Geracao de token de worker e validacoes
+
+Guia detalhado:
+
+- [Abrir guia do Modulo 04](./docs/04-Configurar_Docker_Swarm_Manager.md)
+
+## Modulo 05 - Adicionar workers no cluster
+
+Objetivo: conectar os Chromebooks ao Swarm como workers e validar a comunicacao.
+
+Conteudo atual:
+
+- Processo manual de join de worker
+- Processo automatizado com script
+- Validacoes com docker node ls e deploy de teste
+
+Guia detalhado:
+
+- [Abrir guia do Modulo 05](./docs/05-Adicionar_Workers_no_Cluster.md)
+- [Script de setup do worker](./scripts/setup_worker.sh)
+
+## Modulo 06 - Operacao, monitoramento e manutencao
+
+Objetivo: padronizar atualizacoes, observabilidade e recuperacao de falhas.
+
+Conteudo atual:
+
+- Rotina diaria, semanal e mensal de operacao
+- Monitoramento basico de servicos
+- Backup e plano de contingencia
+
+Guia detalhado:
+
+- [Abrir guia do Modulo 06](./docs/06-Operacao_Monitoramento_e_Manutencao.md)
+
+## Proximos passos sugeridos
+
+1. Validar os guias dos modulos 03 a 06 em bancada e ajustar detalhes praticos.
+2. Completar capturas de tela do modulo 02.
+3. Adicionar checklist de validacao ao fim de cada modulo conforme execucoes reais.
 
