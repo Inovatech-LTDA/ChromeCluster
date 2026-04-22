@@ -255,7 +255,7 @@ else
 fi
 
 # -----------------------------------------------------------------------------
-# 8. Desabilitar suspensão ao fechar a tampa
+# 9. Desabilitar suspensão ao fechar a tampa
 # -----------------------------------------------------------------------------
 sudo cp /etc/systemd/logind.conf /etc/systemd/logind.conf.bak && \
 sudo sed -i 's/^#\?HandleLidSwitch=.*/HandleLidSwitch=ignore/' /etc/systemd/logind.conf && \
