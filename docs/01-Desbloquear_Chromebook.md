@@ -81,7 +81,7 @@ Neste passo entraremos no modo de recuperação do dispositivo para ativar o Mod
 
    ![Imagem extraída da wiki do MrChromebox](../images/docs/01/recovery-keyboard-hint.png)
 
-2. Na tela inicial do modo de recuperação, pressione **Ctrl + D** e confirme pressionando **ENTER**. O computador reiniciará e iniciará o processo para habilitar o Modo Desenvolvedor.
+2. Na tela inicial do modo de recuperação, pressione **ESC** e confirme pressionando **ENTER**. O computador reiniciará e iniciará o processo para habilitar o Modo Desenvolvedor.
 
    **Modo Recuperação**
    ![Tela do modo recuperação](../images/docs/01/tela_modo_recuperacao.png)
