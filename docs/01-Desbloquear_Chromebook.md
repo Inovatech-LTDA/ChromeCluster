@@ -120,4 +120,4 @@ Neste módulo desbloquearemos o firmware do Chromebook utilizando o [MrChromebox
 
 5. Aguarde a finalização do script. Ao retornar ao menu principal, pressione **P** para desligar o dispositivo.
 
-Pronto — seu Chromebook está desbloqueado! ✅
+-Pronto — seu Chromebook está desbloqueado! ✅
