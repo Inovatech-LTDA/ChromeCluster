@@ -265,6 +265,15 @@ sudo systemctl restart systemd-logind && \
 echo "Lid switch desabilitado para evitar suspensão ao fechar a tampa." | tee -a "$LOG_FILE"
 
 # -----------------------------------------------------------------------------
+# 10. Configurar script para ajustar brilho ao abrir/fechar a tampa
+# -----------------------------------------------------------------------------
+sudo apt update && sudo apt install acpid -y && \
+sudo wget -O /etc/acpi/lid_handler.sh https://raw.githubusercontent.com/Inovatech-LTDA/ChromeCluster/refs/heads/main/scripts/lid_handler.sh && \
+sudo chmod +x /etc/acpi/lid_handler.sh && \
+sudo bash -c 'printf "event=button/lid.*\naction=/etc/acpi/lid_handler.sh\n" > /etc/acpi/events/lid-event' && \
+sudo systemctl restart acpid
+
+# -----------------------------------------------------------------------------
 # RESUMO FINAL
 # -----------------------------------------------------------------------------
 RAM_TOTAL=$(free -m | awk '/^Mem:/{print $2}')
