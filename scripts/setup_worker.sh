@@ -265,13 +265,20 @@ sudo systemctl restart systemd-logind && \
 echo "Lid switch desabilitado para evitar suspensão ao fechar a tampa." | tee -a "$LOG_FILE"
 
 # -----------------------------------------------------------------------------
-# 10. Configurar script para ajustar brilho ao abrir/fechar a tampa
+# 10. Automação do Backlight (Apagar tela ao fechar)
 # -----------------------------------------------------------------------------
-sudo apt update && sudo apt install acpid -y && \
-sudo wget -O /etc/acpi/lid_handler.sh https://raw.githubusercontent.com/Inovatech-LTDA/ChromeCluster/refs/heads/main/scripts/lid_handler.sh && \
+sudo apt update && sudo apt install acpid curl -y && \
+sudo curl -fsSL https://raw.githubusercontent.com/Inovatech-LTDA/ChromeCluster/refs/heads/main/scripts/lid_handler.sh -o /etc/acpi/lid_handler.sh && \
+
+# Garante permissão de execução
 sudo chmod +x /etc/acpi/lid_handler.sh && \
+
+# Cria a regra de evento
 sudo bash -c 'printf "event=button/lid.*\naction=/etc/acpi/lid_handler.sh\n" > /etc/acpi/events/lid-event' && \
-sudo systemctl restart acpid
+
+# Reinicia o serviço
+sudo systemctl restart acpid && \
+echo "Configuração de gerenciamento de tela concluída."
 
 # -----------------------------------------------------------------------------
 # RESUMO FINAL
